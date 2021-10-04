@@ -1,0 +1,14 @@
+@import "./components/dogs";
+@import "./components/select";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(350.74deg, #e7eaf0 36.62%, #ffffff 117.41%);
+  padding: 15px;
+}

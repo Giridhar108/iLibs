@@ -1,0 +1,56 @@
+.dogs {
+  margin-top: 16px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.dogs > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dogs > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.dogs .wide {
+  grid-column: span 2;
+}
+
+.dogs .tall {
+  grid-row: span 2;
+}
+
+.dogs .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media screen and (max-width: 500px) {
+  .dogs {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .dogs .small {
+    grid-column: span 2;
+  }
+
+  .dogs .tall {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+}
