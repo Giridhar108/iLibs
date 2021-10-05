@@ -14,40 +14,9 @@ function Dogs({ currentDog }) {
     <div className="dogs">
       {!loadingDog
         ? dog.message.map((dog, i) => {
-
-            if (lengthDogs < 10) {
-              if (`${i + 1}`.includes("4")) {
-                return (
-                  <div key={dog} className="tall">
-                    <Suspense fallback={<ContentLoaderBlock />}>
-                      <Img dog={dog} />
-                    </Suspense>
-                  </div>
-                );
-              }
-
-              if (`${i + 1}`.includes("3")) {
-                return (
-                  <div key={dog} className="wide">
-                    <Suspense fallback={<ContentLoaderBlock />}>
-                      <Img dog={dog} />
-                    </Suspense>
-                  </div>
-                );
-              }
-              return (
-                <div key={dog} className="small">
-                  <Suspense fallback={<ContentLoaderBlock />}>
-                    <Img dog={dog} />
-                  </Suspense>
-                </div>
-              );
-            }
-
-
             if (`${i + 1}`.includes("3") || `${i + 1}`.includes("6")) {
               return (
-                <div key={dog} className="tall">
+                <div key={dog} className={lengthDogs < 10 ? "wide" : "tall"}>
                   <Suspense fallback={<ContentLoaderBlock />}>
                     <Img dog={dog} />
                   </Suspense>
@@ -57,7 +26,7 @@ function Dogs({ currentDog }) {
 
             if (`${i + 1}`.includes("4")) {
               return (
-                <div key={dog} className="wide">
+                <div key={dog} className={lengthDogs < 10 ? "tall" : "wide"}>
                   <Suspense fallback={<ContentLoaderBlock />}>
                     <Img dog={dog} />
                   </Suspense>
