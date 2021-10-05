@@ -1,5 +1,5 @@
 import React from "react";
-import picture from "../assets/images/load.jpg";
+import picture from "../assets/images/load.png";
 
 const ContentLoaderBlock = () => {
 
